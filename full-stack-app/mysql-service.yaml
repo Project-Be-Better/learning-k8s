@@ -1,0 +1,12 @@
+# This YAML file defines a Kubernetes Service for MySQL.
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql # The name of the Service, used for DNS and discovery.
+spec:
+  selector:
+    app: mysql # Selects Pods with the label 'app: mysql' to route traffic to.
+  ports:
+    - port: 3306 # The port that the Service exposes inside the cluster.
+      targetPort: 3306 # The port on the Pod that the Service forwards traffic to.
+  # clusterIP: None # 'None' makes this a headless Service, allowing direct Pod-to-Pod

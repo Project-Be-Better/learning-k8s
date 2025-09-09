@@ -1,0 +1,32 @@
+apiVersion: apps/v1 # Use the apps/v1 API version for Deployments
+kind: Deployment # This resource is a Deployment
+metadata:
+  name: mysql # Name of the Deployment
+spec:
+  replicas: 1 # Run only one replica (pod) of MySQL
+  selector:
+    matchLabels:
+      app: mysql # Select pods with label app=mysql
+  template:
+    metadata:
+      labels:
+        app: mysql # Label for the pod (used by selector and services)
+    spec:
+      containers:
+        - name: mysql # Name of the container
+          image: mysql:8.0 # MySQL Docker image version 8.0
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret # Reference to the Kubernetes Secret
+                  key: mysql-root-password # Key in the Secret for root password
+          ports:
+            - containerPort: 3306 # Expose MySQL default port
+          volumeMounts:
+            - name: mysql-storage # Name of the volume to mount
+              mountPath: /var/lib/mysql # Mount path for MySQL data (for persistence)
+      volumes:
+        - name: mysql-storage # Define a volume named mysql-storage
+          persistentVolumeClaim:
+            claimName: mysql-pvc # Use the PersistentVolumeClaim named mysql-
