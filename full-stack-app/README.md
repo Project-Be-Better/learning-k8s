@@ -1,5 +1,9 @@
 # MYSQL Service
 
+![](./img/1-1-sql-flow.png)
+
+![](./img/1-2-sql-lifecycle.png)
+
 ## Step 1 : Apply the Secret
 
 ```bash
