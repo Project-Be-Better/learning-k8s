@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>K8s Frontend Demo</title>
+    <script>
+      try {
+          const res = await fetch("http://user-service:8080");
+          const text = await res.text();
+          document.getElementById("data").innerText = text;
+        } catch (e) {
+          document.getElementById("data").innerText = "Error: "+e;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Hello from frontend</h1>
+    <p>Message from the backend</p>
+    <pre id="data"> Loading ...</pre>
+  </body>
+</html>

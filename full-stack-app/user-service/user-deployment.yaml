@@ -14,12 +14,9 @@ spec:
     spec:
       containers:
         - name: user-service
-          image: hashicorp/http-echo:0.2.3
-          args:
-            - "-text=Hello from User Service"
-            - "-listen=:8080"
+          image: nginxdemos/hello:plain-text
           ports:
-            - containerPort: 8080
+            - containerPort: 80
           resources:
             requests:
               memory: "64Mi"
