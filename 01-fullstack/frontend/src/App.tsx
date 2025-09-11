@@ -14,8 +14,8 @@ function App() {
 
   const callAPI = async () => {
     try {
-      // const res = await fetch('http://localhost:3001/'); 
-      const res = await fetch('http://k8s-server:3001/'); 
+      const res = await fetch('http://localhost:3001/'); 
+      // const res = await fetch('http://k8s-server:3001/'); 
       const data = await res.json();
       setData(data);
     } catch (error) {
