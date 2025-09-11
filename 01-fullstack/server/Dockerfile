@@ -9,4 +9,4 @@ RUN npm install
 COPY . .
 # Expose port and start server
 EXPOSE 3001
-CMD ["node", "start"]
+CMD ["npm", "start"]

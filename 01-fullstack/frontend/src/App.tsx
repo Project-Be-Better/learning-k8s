@@ -3,9 +3,13 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+interface ApiResponse {
+  message:string
+};
+
 function App() {
   const [count, setCount] = useState(0)
-  const [data, setData] = useState("Loading .. ");
+  const [data, setData] = useState<ApiResponse|null>(null)
 
 
   const callAPI = async () => {
@@ -35,7 +39,7 @@ function App() {
       </div>
       <h1>Vite + React</h1>
 
-      <h1>Hello from {data}</h1>
+      <h1>Hello from {data?.message || "Loading .. "}</h1>
 
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
