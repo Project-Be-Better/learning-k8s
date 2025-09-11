@@ -2,7 +2,6 @@
 
 This project demonstrates a simple fullstack application deployed on Kubernetes using Minikube. It includes a React frontend and a Node.js backend, with all necessary Kubernetes manifests for local development and deployment.
 
----
 
 ## How It Works
 
@@ -21,7 +20,6 @@ This project demonstrates a simple fullstack application deployed on Kubernetes 
 4. **Backend Service** receives the API call and routes it to a backend Pod.
 5. **Backend Pod** (Node.js server) processes the request and responds.
 
----
 
 ## Why This Setup?
 
@@ -32,7 +30,6 @@ This project demonstrates a simple fullstack application deployed on Kubernetes 
 - **Service Abstraction**: Kubernetes Services provide stable endpoints and load balancing for pods, abstracting away pod IP changes.
 - **Load Balancing**: We use Kubernetes Services (specifically, ClusterIP and NodePort) to automatically distribute incoming traffic across all healthy pods. This ensures high availability and scalability—if one pod fails or more pods are added, the service will balance requests among them.
 
----
 
 ## Kubernetes Networking Options
 
@@ -60,7 +57,6 @@ Kubernetes provides several ways to expose and connect your applications:
   - Manages external access to services, typically HTTP.
   - Provides advanced routing, SSL termination, and virtual hosting.
 
----
 
 ## Key Decisions
 
@@ -71,7 +67,6 @@ Kubernetes provides several ways to expose and connect your applications:
 - **Zero-Downtime Rollouts**: Using `kubectl rollout restart deployment ...` enables seamless updates to deployments without downtime.
 - **Minimal, Readable Manifests**: All Kubernetes YAML files are kept simple and well-commented for learning and clarity.
 
----
 
 ## How to Use
 
@@ -106,7 +101,6 @@ Kubernetes provides several ways to expose and connect your applications:
    kubectl rollout restart deployment k8s-server
    ```
 
----
 
 ## Further Reading
 - See the `frontend/`, `server/`, and `infra/` folders for more details and specific instructions.
