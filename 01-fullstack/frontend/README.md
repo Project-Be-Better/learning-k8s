@@ -13,4 +13,8 @@ docker build -t k8s-frontend .
 ```
 
 
+eval $(minikube docker-env)
+docker build -t k8s-frontend ./path-to-frontend
+kubectl rollout restart deployment k8s-frontend
+
 docker run -p 3000:80 --name k8s-frontend-container k8s-frontend

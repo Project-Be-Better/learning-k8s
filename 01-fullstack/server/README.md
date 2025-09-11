@@ -13,4 +13,7 @@ docker build -t k8s-server .
 ```
 
 
+
+kubectl rollout restart deployment k8s-server
+
 docker run -p 3001:3001 --name k8s-backend-container k8s-server
