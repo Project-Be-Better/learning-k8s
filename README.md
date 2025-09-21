@@ -40,3 +40,11 @@ kubectl delete deployment nginx-depl
 # When you want to wipe everything in a namespace
 kubectl delete deployment nginx-deployment--all
 ```
+
+# Minikube 
+
+Start the minikube
+ 
+```bash
+minikube start
+```
