@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: auth-service
+  name: ceramicraft-auth-service
   namespace: ceramicraft
 spec:
   selector:
-    app: auth-service
+    app: ceramicraft-auth-service
   ports:
     - protocol: TCP
       port: 80
